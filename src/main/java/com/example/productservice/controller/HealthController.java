@@ -12,9 +12,9 @@ public class HealthController {
     @GetMapping("/health")
     public Map<String, Object> checkHealth() {
         return Map.of(
-                "service" "product-service",
-                "version" "1.0.0",
-                "status" "UP",
+                "service", "product-service",
+                "version", "1.0.0",
+                "status", "UP",
                 "timestamp", Instant.now()
         );
     }

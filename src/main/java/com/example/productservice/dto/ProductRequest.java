@@ -1,29 +1,15 @@
-package com.example.productservice.model;
+package com.example.productservice.dto;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 
-@Entity
-@Table(name = "products")
-public class Product {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class ProductRequest {
 
     @NotBlank(message = "Name cannot be blank")
-    @Column(nullable = false)
     private String name;
 
     @DecimalMin(value = "0.01", message = "Price must be at least 0.01")
-    @Column(nullable = false)
     private double price;
 
     @Min(value = 0, message = "Stock quantity cannot be negative")
@@ -32,30 +18,14 @@ public class Product {
     @NotBlank(message = "Category cannot be blank")
     private String category;
 
-    public Product() {
+    public ProductRequest() {
     }
 
-    public Product(Long id, String name, double price, int stockQty, String category) {
-        this.id = id;
+    public ProductRequest(String name, double price, int stockQty, String category) {
         this.name = name;
         this.price = price;
         this.stockQty = stockQty;
         this.category = category;
-    }
-
-    public Product(String name, double price, int stockQty, String category) {
-        this.name = name;
-        this.price = price;
-        this.stockQty = stockQty;
-        this.category = category;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {
