@@ -1,0 +1,10 @@
+com\example\productservice\controller\ProductController.class
+com\example\productservice\controller\package-info.class
+com\example\productservice\service\package-info.class
+com\example\productservice\ProductServiceApplication.class
+com\example\productservice\model\package-info.class
+com\example\productservice\repository\ProductRepository.class
+com\example\productservice\model\Product.class
+com\example\productservice\controller\HealthController.class
+com\example\productservice\repository\package-info.class
+com\example\productservice\service\ProductService.class
